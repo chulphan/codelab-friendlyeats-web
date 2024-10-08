@@ -72,19 +72,19 @@ export default function RestaurantListings({
   const [restaurants, setRestaurants] = useState(initialRestaurants);
   const [filters, setFilters] = useState(initialFilters);
 
-  // useEffect(() => {
-  // 	routerWithFilters(router, filters);
-  // }, [filters]);
+  useEffect(() => {
+    routerWithFilters(router, filters);
+  }, [filters]);
 
-  // useEffect(() => {
-  // 	const unsubscribe = getRestaurantsSnapshot(data => {
-  // 		setRestaurants(data);
-  // 	}, filters);
+  useEffect(() => {
+    const unsubscribe = getRestaurantsSnapshot((data) => {
+      setRestaurants(data);
+    }, filters);
 
-  // 	return () => {
-  // 		unsubscribe();
-  // 	};
-  // }, [filters]);
+    return () => {
+      unsubscribe();
+    };
+  }, [filters]);
 
   return (
     <article>
