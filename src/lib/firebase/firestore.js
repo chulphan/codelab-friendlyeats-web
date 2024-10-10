@@ -50,7 +50,6 @@ const updateWithRating = async (
     ...review,
     timestamp: Timestamp.fromDate(new Date()),
   });
-  return;
 };
 
 export async function addReviewToRestaurant(db, restaurantId, review) {
@@ -78,7 +77,6 @@ export async function addReviewToRestaurant(db, restaurantId, review) {
     );
     throw error;
   }
-  return;
 }
 
 function applyQueryFilters(q, { category, city, price, sort }) {
